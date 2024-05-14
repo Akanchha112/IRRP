@@ -91,4 +91,9 @@
     cursor:pointer;
     color: #1a5208;
   }
- 
+  .role select {
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 15px;
+  }
