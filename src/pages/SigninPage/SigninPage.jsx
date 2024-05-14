@@ -100,7 +100,7 @@ const SigninPage = () => {
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter your password' />
             <label className="errorLabel">{passwordError}</label>
           </div>
-          <div>
+          <div className='role'>
             <label>Role:</label>
             <select value={role} onChange={(e) => { setRole(e.target.value); console.log(role); }}>
               <option value="faculty">Faculty</option>

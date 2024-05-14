@@ -10,7 +10,7 @@
 .signup-Card{
   height: 70%;
     width: 300px;
-    background-color: #01A7C2;
+    background-color: #ffffff;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 64%;
@@ -18,8 +18,8 @@
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 30px 35px 60px 35px;
+    box-shadow: 0 0 40px #dbd9d9;
+    padding: 20px 50px 100px 35px;
 }
 .signup-Card *{
   font-family: 'Poppins',sans-serif;
@@ -30,7 +30,7 @@
 }
 
 .signup-Card h2{
-  color: #ffffff;
+  color: #000000;
   font-size: 32px;
   font-weight: 500;
   margin: 0;
@@ -38,7 +38,7 @@
   text-align: center;
 }
 .signup-Card label{
-  color: #ffffff;
+  color: #000000;
   display: block;
   margin-top: 20px;
   font-size: 16px;
@@ -54,20 +54,21 @@
   margin-top: 2px;
   font-size: 14px;
   font-weight: 300;
+  background-color: #F1F1F1;
 }
 .signup-Card input:focus{
-  border-color: #07263B;
-  background-color: #00a2bb;
-  color: #ffffff;
+  /* border-color: #07263B; */
+  background-color: rgb(235, 233, 233);
+  color: #000000;
 }
 .signup-Card ::placeholder{
-  color: #e5e5e5;
+  color: #000000;
 }
 .signup-Card button{
   margin-top: 30px;
   width: 100%;
-  background-color: #ffffff;
-  color: #07263B;
+  background-color: #1E7503;
+  color: #ffffff;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
@@ -76,7 +77,7 @@
   /* color: black; */
 }
 .signup-Card button:hover{
-  background-color: #07263B;
+  background-color: #1D5E08;
   color: #ffffff;
 }
 .inputContainer > .errorLabel {
@@ -84,9 +85,14 @@
     font-size: 12px;
   }
   .signnavigator{
-    color: #07263B;
+    color: #1E7503;
   }
   .signnavigator:hover{
     cursor:pointer;
-    color: white;
+    color: #1a5208;
+  }
+  .role select {
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    border-radius: 3px;
   }
