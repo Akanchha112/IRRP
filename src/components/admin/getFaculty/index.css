@@ -1,0 +1,40 @@
+.istituteprofessors{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 40px;
+}
+.istituteprofessors-container{
+    width: 50%;
+    box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
+
+}
+.istituteprofessors-container h2{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 42px;
+    text-align: center;
+}
+.istituteprofessors-container .subcontainer{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding: 20px 40px;
+    width: 100%;
+}
+.istituteprofessors-container .eachprof{
+    padding: 10px;
+    width: 85%;
+    border-bottom: 3px solid #01A7C2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.istituteprofessors-container .eachprof h3{
+ font-size: 16px;
+}
+.istituteprofessors-container .eachprof p{
+    font-size: 14px;
+}

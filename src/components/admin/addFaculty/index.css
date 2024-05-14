@@ -1,0 +1,87 @@
+.addProfContainer {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+.subcontainerAdd {
+
+    /* max-width: 500px; */
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 20px 40px -20px rgba(14, 0, 47, 0.11);
+    /* padding: 50px 35px; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+.subcontainerAdd h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 42px;
+    text-align: center;
+}
+
+.subcontainerAdd label {
+    /* color: #ffffff; */
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.subcontainerAdd input {
+    display: block;
+    height: 30px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0 30px 0 0;
+}
+
+.subcontainerAdd button {
+    margin: 19px 0 0 8px;
+    width: 80px;
+
+    background-color: #07263B;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    /* color: black; */
+}
+
+.subcontainerAdd button:hover {
+    background-color: #00a2bb;
+    color: #ffffff;
+}
+
+.subcontainerAdd .errorLabel {
+    margin-top: 10px;
+    color: red;
+    font-size: 10px;
+}
+
+.addProfContainer  form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  
+  

@@ -1,0 +1,14 @@
+footer {
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* width: 100%; */
+    font-size: 1.4rem;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    color: #000000;
+  }
+.contactName{
+  font-weight: 300;
+}

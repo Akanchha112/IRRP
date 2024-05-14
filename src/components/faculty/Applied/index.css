@@ -1,0 +1,51 @@
+.Appliedjob{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 40px;
+}
+.Appliedjob-container{
+    width: 50%;
+    box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
+
+}
+.Appliedjob-container h2{
+    font-size: 32px;
+    font-weight: 600;
+    margin: 10px 0;
+    line-height: 42px;
+    text-align: center;
+}
+.Appliedjob-container .subcontainer{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+.Appliedjob-container .eachresponse{
+    padding: 10px;
+    width: 80%;
+    border-bottom: 3px solid #01A7C2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Appliedjob-container .eachresponse h3{
+ font-size: 18px;
+}
+.Appliedjob-container .eachresponse p{
+    font-size: 16px;
+}
+.Appliedjob-container button{
+    width: 90px;
+    margin-right:10px;
+    background-color: #07263B;
+    color: #ffffff;
+    padding: 5px 0;
+    font-size: 14x;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
