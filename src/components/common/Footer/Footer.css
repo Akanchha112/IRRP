@@ -9,6 +9,10 @@ footer {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     color: #000000;
   }
-.contactName{
-  font-weight: 300;
+.footer{
+  display: flex;
+  justify-content: right;
+}
+.footer > img{
+  width: 120px;
 }

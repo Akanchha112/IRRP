@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import email from "../img/email.png";
+import logo from '../../common/img/IGDTUWlogo.jpg';
 function Footer(){
     return(
         <footer>
@@ -11,9 +11,8 @@ function Footer(){
                 <img src="" alt-text="" />
                 </div> */}
                 
-                <div className='contactName' id=''>
-                Created by
-                Akanchha and Tarni
+                <div className='footer' id=''>
+                <img src={logo} className='' id=''></img>
                 </div>
             </div>
 
