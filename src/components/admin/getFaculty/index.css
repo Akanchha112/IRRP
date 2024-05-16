@@ -21,10 +21,10 @@
     display: flex;
     /* flex-wrap: wrap; */
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     flex-direction: column;
     padding: 20px 40px;
-    width: 100%;
+    /* width: 100%; */
 }
 .istituteprofessors-container .eachprof{
     padding: 10px;

@@ -55,7 +55,7 @@ const ResearchAdd = () => {
                 />
                 :
                 <div className="subcontainerJob">
-                    <h1>Add Job</h1>
+                    <h1>Add Research</h1>
                     <form onSubmit={handleAdd}>
                         <div>
                             <div>

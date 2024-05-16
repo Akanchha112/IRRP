@@ -63,7 +63,7 @@ const AddFaculty = () => {
                 />
                 :
                 <div className="subcontainerAdd">
-                    <h1>Add Professor</h1>
+                    <h1>Add Faculty</h1>
                     <form onSubmit={handleAdd}>
                         <div>
                             <label>Email:</label>

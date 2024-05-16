@@ -5,36 +5,36 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import BeatLoader from "react-spinners/BeatLoader";
 
 const GetFaculty = () => {
-    const [professor, setProfessors] = useState([]);
+    const [faculty, setfaculty] = useState([]);
     const instituteId = localStorage.getItem('uid'); // Replace with your institute ID
     const [loading, setloading] = useState(true);
 
     useEffect(() => {
-        const fetchProfessors = async () => {
+        const fetchfaculty = async () => {
             try {
-                const fetchProfessors = async (instituteId) => {
-                    const professorsRef = collection(firestore, "users");
-                    const q = query(professorsRef, where("role", "==", "professor"), where("institueid", "==", instituteId));
+                const fetchfaculty = async () => {
+                    const facultyRef = collection(firestore, "users");
+                    const q = query(facultyRef, where("role", "==", "faculty"));
                     const querySnapshot = await getDocs(q);
 
-                    const professors = [];
+                    const faculty = [];
                     querySnapshot.forEach((doc) => {
-                        professors.push(doc.data());
+                        faculty.push(doc.data());
                     });
-                    setProfessors(professors)
-                    return professors;
+                    setfaculty(faculty)
+                    return faculty;
                 };
 
-                fetchProfessors(instituteId).then((professors) => {
-                    console.log("Professors:", professors);
+                fetchfaculty().then((faculty) => {
+                    console.log("faculty:", faculty);
                 });
-                // setProfessors(professorsData);
+                // setfaculty(facultyData);
             } catch (error) {
-                console.error('Error fetching professors:', error);
+                console.error('Error fetching faculty:', error);
             }
         };
 
-        fetchProfessors();
+        fetchfaculty();
     }, [instituteId]);
 
     useEffect(() => {
@@ -56,14 +56,14 @@ const GetFaculty = () => {
                 />
                 :
                 <div className="istituteprofessors-container">
-                    <h2>Professors</h2>
+                    <h2>Faculty</h2>
                     <ul className='subcontainer'>
-                        {professor.map((Professor, index) => (
+                        {faculty.map((Faculty, index) => (
 
                             <p key={index} className="eachprof">
-                                <h3>Professor {index+1}</h3>
-                                <p>{Professor.name?Professor.name:<></>}     <i>{Professor.qualification?Professor.qualification:<></>}</i> </p>
-                                <p>Email: {Professor.email}</p>
+                                <h3>Faculty {index+1}</h3>
+                                <p>{Faculty.name?Faculty.name:<></>}     <i>{Faculty.qualification?Faculty.qualification:<></>}</i> </p>
+                                <p>Email: {Faculty.email}</p>
                             </p>
                         ))}
                     </ul>

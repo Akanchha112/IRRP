@@ -5,7 +5,7 @@ const ProfDashboard=()=>{
     return <>
     <ProfNav />
     <ProfJobAdd/>
-    <DisplayJobs />
+    {/* <DisplayJobs /> */}
     </>
 }
 
