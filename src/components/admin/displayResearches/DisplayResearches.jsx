@@ -8,44 +8,48 @@ import { useNavigate, Link } from 'react-router-dom'
 import BeatLoader from "react-spinners/BeatLoader";
 
 const DisplayResearches = () => {
-    const [jobs, setJobs] = useState([]);
+    const [research, setResearch] = useState([]);
     const [loading, setloading] = useState(false);
     const profid = localStorage.getItem('uid');
     const navigate = useNavigate();
     // console.log(profid);
 
     useEffect(() => {
+        try {
+            const fetchJobs = async () => {
+                const researchRef = collection(firestore, "research");
+                const q = query(researchRef, where("status", "==", "open"));
+                const querySnapshot = await getDocs(q);
 
-        const fetchJobs = async () => {
-            try {
+                const researchData = {};
 
-                const fetchJobs = async (profid) => {
-                    const JobsRef = collection(firestore, "jobs");
-                    const q = query(JobsRef, where("status", "==", "open"), where("professorid", "==", profid));
-                    const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const facultyId = data.facultyId;
 
-                    const jobs = [];
-                    querySnapshot.forEach((doc) => {
+                    if (!researchData[facultyId]) {
+                        researchData[facultyId] = {
+                            facultyId: facultyId,
+                            count: 0,
+                            researchItems: []
+                        };
+                    }
 
-                        jobs.push(doc);
-                    });//doc.data(),doc.ref.id
-                    // console.log(jobs)
-                    setJobs(jobs)
-
-                    return jobs;
-                };
-
-                fetchJobs(profid).then((job) => {
-                    // console.log("Jobs:", job);
+                    researchData[facultyId].count += 1;
+                    researchData[facultyId].researchItems.push(data);
                 });
 
-            } catch (error) {
-                console.error('Error fetching professors:', error);
-            }
+                // Convert the researchData object to an array
+                const researchArray = Object.values(researchData);
+                setResearch(researchArray);
 
-        };
+                return research;
+            };
 
-        fetchJobs();
+            fetchJobs();
+        } catch (error) {
+            console.error('Error fetching professors:', error);
+        }
     }, []);
 
     useEffect(() => {
@@ -84,19 +88,21 @@ const DisplayResearches = () => {
                     <h2>Jobs</h2>
 
                     <ul className='subcontainer'>
-                        {!loading && jobs.length !== 0?jobs.map((job, index) => (
+                        {!loading && research.length !== 0 ? research.map((facultyResearch) => (
 
-                            <p key={index} className="eachjob">
+                            <p key={facultyResearch.facultyId} className="eachjob">
 
-                                <h3>{job.data().postion}</h3>
-                                <p>Description: {job.data().description}</p>
-                                <p>Status: {job.data().status}</p>
-                                <p>Stipend: {job.data().stipend}</p>
-                                <p>Duration: {job.data().duration}</p>
-                                <button onClick={() => { handleClose(job.ref.id) }}>Close Job</button>
-                                <button onClick={() => { handleResponse(job.ref.id) }}>Responses</button>
+                                <h2>Faculty ID: {facultyResearch.facultyId}</h2>
+                                <p>Research Count: {facultyResearch.count}</p>
+                                <ul>
+                                    {facultyResearch.researchItems.map((item, index) => (
+                                        <li key={index}>{JSON.stringify(item)}</li>
+                                    ))}
+                                </ul>
+                                
+                                <button onClick={() => { handleResponse(facultyResearch.facultyId) }}>See All </button>
                             </p>
-                        )):<h3>No Jobs Posted Yet</h3>}
+                        )) : <h3>No Jobs Posted Yet</h3>}
                     </ul>
 
                 </div>

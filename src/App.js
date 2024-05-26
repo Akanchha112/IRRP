@@ -2,7 +2,8 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 import SigninPage from './pages/SigninPage/SigninPage';
 import SignupPage from './pages/SignupPage/SignupPage';
-import InstituteDash from './pages/institute/DashBoard/Dashboard';
+import AdminDash from './pages/admin/DashBoard/Dashboard';
+import AddFaculty from './pages/admin/AddFaculty';
 import Profile from './components/common/profile/Profile';
 import ProfileEdit from './components/common/profile/ProfileEdit';
 import ProfDashboard from './pages/prof/dashboard/ProfDashboard';
@@ -21,7 +22,8 @@ function App() {
         <Route path="/" element={<LandingPage />}/>
         <Route path="/signup" element={<SignupPage/>} />
         <Route path="/signin" element={<SigninPage/>} />
-        <Route path="/admin" element={< Secure component = {InstituteDash} />} />
+        <Route path="/admin" element={< Secure component = {AdminDash} />} />
+        <Route path="/addfaculty" element={< Secure component = {AddFaculty} />} />
         <Route path="/profile" element={< Secure component = {Profile} />} />
         <Route path='/profileedit/:uid' element={< Secure component = {ProfileEdit} />} />
         {/* <Route path="/student" element={< Secure component = {JobSearch} />}/> */}

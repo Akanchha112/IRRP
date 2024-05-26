@@ -17,14 +17,14 @@ const ResearchAdd = () => {
     const handleAdd = async (e) => {
         e.preventDefault();
         setloading(true);
-        const profid = localStorage.getItem('uid');
+        const facultyid = localStorage.getItem('uid');
         const research = {
             postion: position,
             stipend: stipend,
             duration: duration,
             description: description,
             status: status,
-            professorid: profid
+            facultyid: facultyid
         }
         try {
             const newresearchRef = doc(collection(firestore, "research"));

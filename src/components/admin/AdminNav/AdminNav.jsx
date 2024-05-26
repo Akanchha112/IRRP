@@ -14,8 +14,11 @@ function AdminNav(){
     const profilehandle=()=>{
         navigate('/profile');
     }
+    const addhandle=()=>{
+        navigate('/addfaculty');
+    }
     const homehandle=()=>{
-        navigate('/institute');
+        navigate('/admin');
     }
     const logouthandle = () => {
         signOut(auth).then(() => {
@@ -40,6 +43,7 @@ function AdminNav(){
                         id="Navbar-img"
                     /></a> 
                 <nav id="nav-bar">
+                    <a href="#about" className="nav-link" onClick={()=>{addhandle()}} >Add Faculty</a>
                     <a href="#about" className="nav-link" onClick={()=>{profilehandle()}} >Profile</a>
                     <a href="#connect" className="nav-link" onClick={() => { logouthandle() }}>Logout</a>
                     {/* <a href="#connect" className="nav-link" onClick={()=>{homehandle()}}>Connect</a>
