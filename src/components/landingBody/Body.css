@@ -1,0 +1,64 @@
+/* styles.css */
+
+.heading {
+    margin: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.awardees-container {
+    text-align: center;
+}
+
+.awardee {
+    display: inline-block;
+    margin: 50px;
+    padding: 10px;
+    border: 2px solid #1E4D0F;
+    border-radius: 10px;
+    width: 245px;
+    height: 245px;
+    position: relative;
+}
+
+.awardee img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    /* filter: grayscale(100%);
+    transition: filter 0.3s ease; */
+}
+
+.awardee p {
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 87%;
+    background-color: #ffffff;
+    color: #1E4D0F;
+    padding: 10px;
+    text-align: center;
+}
+
+.awardee:hover p {
+    opacity: 1;
+}
+
+/* .awardee:hover img {
+    filter: grayscale(0%);
+} */
+
+.green-line {
+    width: 55%;
+    height: 4px;
+    background-color: #1E4D0F;
+    margin: 95px auto;
+    margin-bottom: 80px;
+}

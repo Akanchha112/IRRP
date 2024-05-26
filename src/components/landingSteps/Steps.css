@@ -1,0 +1,61 @@
+
+
+
+
+.green-text {
+    color: #1E4D0F;
+}
+
+.step {
+    display: inline-block;
+    margin: 20px 58px;
+    position: relative; /* Add this line */
+    /* width: 250px; */
+}
+
+.steps-container {
+    text-align: center;
+    padding: 20px;
+    margin: 85px;
+}
+/* green circles */
+.step-number {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+/* white circle with black br=order */
+/* .step-number {
+    color: black;
+    border: 4px solid black;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    margin-bottom: 50px;
+} */
+
+.steps-container p {
+    font-size: 25px;
+    color: #333;
+}
+.arrow-image {
+    position: absolute;
+    top: 33%;
+    transform: translateY(-62%);
+    left: calc(100% + 20px);
+    width: 77px;
+    height: 47px;
+}
