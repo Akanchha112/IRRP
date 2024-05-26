@@ -15,7 +15,7 @@ import Apply from './components/student/Apply/Apply';
 import AllResearches from './pages/admin/AllResearches';
 import Applied from './components/faculty/Applied/Applied';
 import Secure from './components/common/Secure/Secure';
-
+import Download from './pages/admin/Download';
 function App() {
   return (
     <BrowserRouter>
@@ -35,7 +35,7 @@ function App() {
 
         <Route path="/faculty" element={< Secure component = {ProfDashboard} />}/>
         <Route path="/allResearch/:facultyid" element={< Secure component = {AllResearches} />} />
-
+        <Route path="/download" element={< Secure component = {Download} />}/>
       </Routes>
       <ToastContainer />
     </BrowserRouter>

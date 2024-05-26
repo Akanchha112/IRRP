@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import "./index.css"
-import { doc, collection, query, where, getDocs, getDoc, updateDoc } from "firebase/firestore";
+import { doc, collection, query, where, getDocs,  updateDoc } from "firebase/firestore";
 import { firestore } from '../../../services/firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,14 +15,7 @@ const FacultyResearch = () => {
 
     // Use jobId to fetch data related to the job
     useEffect(() => {
-        //fetch candidate data
-        const getUserdata = async (userid) => {
-            setloading(true);
-            const userDoc = doc(firestore, "users", userid);
-            const userSnapshot = await getDoc(userDoc);
-            const userData = userSnapshot.data();
-            return userData;
-        }
+        
         //fetch all pending researches
         const fetchResponse = async () => {
             try {
@@ -38,10 +31,7 @@ const FacultyResearch = () => {
                         console.log(doc.ref.id)
                         // const userid = doc.data().userId;
                         Response.push(doc);
-                        // const userData = await getUserdata(userid);
-                        // const combinedData = { userData, responseData: doc };
-                        // console.log(combinedData);
-                        // Response.push(combinedData);
+                        
                     });
 
                     setresearches(Response)

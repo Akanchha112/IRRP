@@ -21,6 +21,9 @@ function AdminNav(){
     const homehandle=()=>{
         navigate('/admin');
     }
+    const downloadhandle=()=>{
+        navigate('/download');
+    }
     const logouthandle = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
@@ -45,6 +48,7 @@ function AdminNav(){
                     /></a> 
                 <nav id="nav-bar">
                     <a href="#about" className="nav-link" onClick={()=>{addhandle()}} >Add Faculty</a>
+                    <a href="#about" className="nav-link" onClick={()=>{downloadhandle()}} >Download</a>
                     <a href="#about" className="nav-link" onClick={()=>{profilehandle()}} >Profile</a>
                     <a href="#connect" className="nav-link" onClick={() => { logouthandle() }}>Logout</a>
                     {/* <a href="#connect" className="nav-link" onClick={()=>{homehandle()}}>Connect</a>
