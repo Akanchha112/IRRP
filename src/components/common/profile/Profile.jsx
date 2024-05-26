@@ -105,7 +105,7 @@ const Profile = (props) => {
 
 
                         <span><h3 className="Qualification">Qualification: {qualification ? qualification : "no information"}</h3></span>
-                            <span><h3 className="Qualification">College: {College ? College : "no information"}</h3></span>
+                            <span><h3 className="Qualification">Description: {College ? College : "no information"}</h3></span>
 
 
                         </div>)}

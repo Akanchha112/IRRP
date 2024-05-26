@@ -140,3 +140,6 @@
 .checkbox-label input[type="checkbox"] {
     margin-right: 8px; 
 }
+form > div > div {
+    margin-bottom: 13px;
+}

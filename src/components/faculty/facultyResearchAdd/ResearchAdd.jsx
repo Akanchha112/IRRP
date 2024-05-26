@@ -152,31 +152,31 @@ const ResearchAdd = () => {
                                 <input type="number" value={igdtuwAuthors} onChange={(e) => setIgdtuwAuthors(e.target.value)} placeholder='Number of IGDTUW Authors' required />
                             </div>
                             <div>
-                                {igdtuwAuthorNames.map((authorName, index) => (
-                                    <div key={index}>
-                                        <label>{`Name of IGDTUW Author ${index + 1}`}</label>
-                                        <input
-                                            type="text"
-                                            value={authorName}
-                                            onChange={(e) => handleAuthorNameChange(index, e.target.value)}
-                                            placeholder={`Name of IGDTUW Author ${index + 1}`}
-                                            required
-                                        />
-                                    </div>
-                                ))}
-                                <div>
-                                    <button type="" id="addauthor" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
-                                </div>
-                                <div className='check'>
-                                    <label className="checkbox-label ">
-                                        <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
-                                </div>
-
-                                <div>
-                                    <button id="submit" type="submit">Submit</button>
-                                </div>
+      {igdtuwAuthorNames.map((authorName, index) => (
+        <div key={index}>
+          <label>{`Name of IGDTUW Author ${index + 1}`}</label>
+          <input
+            type="text"
+            value={authorName}
+            onChange={(e) => handleAuthorNameChange(index, e.target.value)}
+            placeholder={`Name of IGDTUW Author ${index + 1}`}
+            required
+          />
+        </div>
+      ))}
+                            <div>
+                                <button type="" id="addauthor" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
                             </div>
-                    </div>
+                            <div className='check'>
+                            <label className="checkbox-label ">
+                                <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
+                            </div>
+                       
+                            <div>
+                                <button id="submit" type="submit">Submit</button>
+                            </div>
+                        </div>
+                        </div>
                     </form>
                 </div>
             }

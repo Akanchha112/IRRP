@@ -60,8 +60,8 @@ const ProfileEdit = () => {
                     <div>
                         
                         {role!="institute"?<div>
-                            <label>College</label>
-                            <input type="text" value={College} onChange={(e) => setCollege(e.target.value)} placeholder='Enter College' required />
+                            <label>Department</label>
+                            <input type="text" value={College} onChange={(e) => setCollege(e.target.value)} placeholder='Enter Department' required />
                         </div>:<></>}
                         
                         {role!="institute"?<div>
@@ -88,7 +88,7 @@ const ProfileEdit = () => {
                             <input type="text" value={areaofWork} onChange={(e) => setareaofWork(e.target.value)} placeholder='Enter your Area Of Work' required />
                         </div>:<></>}
                         {role!="institute"?<div>
-                            <label>Description</label>
+                            <label>Biography</label>
                             <textarea
                                 type="textarea"
                                 value={description}
