@@ -5,7 +5,8 @@ import { doc, getDoc } from "firebase/firestore";
 import "./signin.css";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Navbar from '../../components/common/Navbar/Navbar';
+// import Navbar from '../../components/common/Navbar/Navbar';
+import Navbar from '../../components/landingNavbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import BeatLoader from "react-spinners/BeatLoader";
 
