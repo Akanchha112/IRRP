@@ -19,7 +19,7 @@
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
     box-shadow: 0 0 40px #dbd9d9;
-    padding: 20px 50px 70px 35px;
+    padding: 20px 50px 55px 35px;
 }
 .signin-Card *{
   font-family: 'Poppins',sans-serif;

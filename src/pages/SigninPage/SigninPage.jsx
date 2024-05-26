@@ -109,7 +109,7 @@ const SigninPage = () => {
             </select>
           </div>
           <button onClick={handleSignin}>Sign In</button>
-          <label>Don't have account?<span className='signnavigator' onClick={() => { navigate('/signup') }}> Sign Up</span></label>
+          {/* <label>Don't have account?<span className='signnavigator' onClick={() => { navigate('/signup') }}> Sign Up</span></label> */}
         </div>
       }
 
