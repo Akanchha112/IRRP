@@ -71,6 +71,8 @@
     color: white;
     flex-wrap: nowrap;
     align-content: stretch;
+    font-size: 25px;
+
 }
 
 .social-icons {
@@ -118,16 +120,16 @@
     margin: 0 5px; /* Add margin between the names */
 }
 
-/* Add underline on hover for the links in the credits section */
+
 .credits a:hover {
     /* text-decoration: underline; */
     font-size: 20px;
     /* color: #1E4D0F ;  */
     font-style: normal;
 }
-p{
+/* .footer-container p{
     color: white;
-}
+} */
 a{
     font-style: italic;
     font-weight: 200;
