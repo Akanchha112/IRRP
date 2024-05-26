@@ -38,6 +38,7 @@ const ResearchAdd = () => {
         setloading(true);
         const facultyid = localStorage.getItem('uid');
         const research = {
+            status:"pending",
             facultyid:facultyid,
             papertitle: papertitle,
             journalname: journalname,
