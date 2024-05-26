@@ -62,8 +62,8 @@ const DisplayResearches = () => {
         fetchJobs();
     }, []);
 
-    const handleResponse = (jobId) => {
-        navigate(`/getresponse/${jobId}`);
+    const handleResponse = (facultyid) => {
+        navigate(`/allResearch/${facultyid}`);
     };
 
     useEffect(() => {

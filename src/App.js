@@ -12,6 +12,7 @@ import {ToastContainer} from "react-toastify";
 import JobSearch from './pages/JobSearch/JobSearch';
 import ViewDetails from './components/student/ViewDetails/ViewDetails';
 import Apply from './components/student/Apply/Apply';
+import AllResearches from './pages/admin/AllResearches';
 import Applied from './components/faculty/Applied/Applied';
 import Secure from './components/common/Secure/Secure';
 
@@ -33,7 +34,7 @@ function App() {
         <Route path="/applied" element={< Secure component = {Applied} />}/>
 
         <Route path="/faculty" element={< Secure component = {ProfDashboard} />}/>
-        <Route path="/getresponse/:jobId" element={< Secure component = {ViewResponse} />} />
+        <Route path="/allResearch/:facultyid" element={< Secure component = {AllResearches} />} />
 
       </Routes>
       <ToastContainer />
