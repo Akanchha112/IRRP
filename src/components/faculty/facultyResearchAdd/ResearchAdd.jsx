@@ -18,7 +18,7 @@ const ResearchAdd = () => {
         e.preventDefault();
         setloading(true);
         const profid = localStorage.getItem('uid');
-        const job = {
+        const research = {
             postion: position,
             stipend: stipend,
             duration: duration,
@@ -27,8 +27,8 @@ const ResearchAdd = () => {
             professorid: profid
         }
         try {
-            const newJobRef = doc(collection(firestore, "research"));
-            await setDoc(newJobRef, job);
+            const newresearchRef = doc(collection(firestore, "research"));
+            await setDoc(newresearchRef, research);
 
             toast.success("Added Successfully", { position: "top-center" });
             setPosition('');

@@ -32,11 +32,9 @@ const Applied=()=>{
                     const Response = [];
                     querySnapshot.forEach(async (doc) => {
                         // console.log(doc.data())
-                        const jobid = doc.data().jobId;
-                        const jobData = await getjobdata(jobid);
-                        const combinedData = { jobData, responseData: doc };
-                        console.log(combinedData);
-                        Response.push(combinedData);
+                        const jobdata = doc.data();
+                        console.log(jobdata);
+                        Response.push(jobdata);
                     });
 
                     setapplied(Response)
@@ -89,11 +87,11 @@ return<>
 
                             <p key={index} className="eachresponse">
                                 
-                                <p><strong>Position:</strong> {response.jobData.postion}</p>
-                                <p><strong>Status:</strong> {response.jobData.status}</p>
-                                <p><strong>Duration:</strong> {response.jobData.duration}</p>
-                                <p><strong>Stipend:</strong> {response.jobData.stipend}</p>
-                                <p><strong>status:</strong> <i> {response.responseData.data().status}</i></p>
+                                <p><strong>Position:</strong> {response.postion}</p>
+                                <p><strong>Status:</strong> {response.status}</p>
+                                <p><strong>Duration:</strong> {response.duration}</p>
+                                <p><strong>Stipend:</strong> {response.stipend}</p>
+                                <p><strong>status:</strong> <i> {response.status}</i></p>
                                 
                                 {/* <button onClick={() => { handleAccept(response.responseData.ref.id) }}>Accept</button>
                                 <button onClick={() => { handleReject(response.responseData.ref.id) }}>Reject</button> */}
