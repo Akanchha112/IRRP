@@ -21,8 +21,18 @@ const ResearchAdd = () => {
     const [totalauthors, setTotalAuthors] = useState(false);
     const [igdtuwAuthors,setIgdtuwAuthors] = useState(false);
     const [igdtuwAuthorName,setIgdtuwAuthorName] = useState('');
+    const [igdtuwAuthorNames, setIgdtuwAuthorNames] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
     const [loading, setloading] = useState(false);
+    const handleAddAuthor = () => {
+        setIgdtuwAuthorNames([...igdtuwAuthorNames, '']);
+      };
+    
+      const handleAuthorNameChange = (index, value) => {
+        const updatedAuthors = [...igdtuwAuthorNames];
+        updatedAuthors[index] = value;
+        setIgdtuwAuthorNames(updatedAuthors);
+      };
     const handleAdd = async (e) => {
         e.preventDefault();
         setloading(true);
@@ -69,6 +79,7 @@ const ResearchAdd = () => {
             toast.error(error.message, { position: "bottom-center" });
         }       
         setloading(false);
+        
     }
     return <>
         <div className="addJobContainer">
@@ -137,18 +148,30 @@ const ResearchAdd = () => {
                                 <input type="number" value={igdtuwAuthors}  onChange={(e) => setIgdtuwAuthors(e.target.value)} placeholder='Number of IGDTUW Authors' required />
                             </div>
                             <div>
-                                <label>Name of IGDTUW Authors</label>
-                                <input type="text" value={igdtuwAuthorName}  onChange={(e) => setIgdtuwAuthorName(e.target.value)} placeholder='Name of IGDTUW Authors' required />
+      {igdtuwAuthorNames.map((authorName, index) => (
+        <div key={index}>
+          <label>{`Name of IGDTUW Author ${index + 1}`}</label>
+          <input
+            type="text"
+            value={authorName}
+            onChange={(e) => handleAuthorNameChange(index, e.target.value)}
+            placeholder={`Name of IGDTUW Author ${index + 1}`}
+            required
+          />
+        </div>
+      ))}
+                            <div>
+                                <button type="" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
                             </div>
                             <div>
                             <label>
                                 <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
                             </div>
                             <div>
-                                <button type="submit">Add</button>
+                                <button type="submit">Submit</button>
                             </div>
                         </div>
-                        
+                        </div>
                     </form>
                 </div>
             }
