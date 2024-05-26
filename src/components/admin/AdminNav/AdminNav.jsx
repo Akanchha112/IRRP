@@ -1,6 +1,7 @@
 import React from 'react';
 import "./index.css";
-import logo from '../../common/img/logo.png'
+// import logo from '../../common/img/logo.png'
+import logo from '../../images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { auth } from '../../../services/firebase';
@@ -14,8 +15,11 @@ function AdminNav(){
     const profilehandle=()=>{
         navigate('/profile');
     }
+    const addhandle=()=>{
+        navigate('/addfaculty');
+    }
     const homehandle=()=>{
-        navigate('/institute');
+        navigate('/admin');
     }
     const logouthandle = () => {
         signOut(auth).then(() => {
@@ -40,6 +44,7 @@ function AdminNav(){
                         id="Navbar-img"
                     /></a> 
                 <nav id="nav-bar">
+                    <a href="#about" className="nav-link" onClick={()=>{addhandle()}} >Add Faculty</a>
                     <a href="#about" className="nav-link" onClick={()=>{profilehandle()}} >Profile</a>
                     <a href="#connect" className="nav-link" onClick={() => { logouthandle() }}>Logout</a>
                     {/* <a href="#connect" className="nav-link" onClick={()=>{homehandle()}}>Connect</a>

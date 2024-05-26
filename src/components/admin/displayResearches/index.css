@@ -30,7 +30,7 @@
     padding: 10px 0 15px 0;
     width: 90%;
     margin-bottom: 30px;
-    border-bottom: 3px solid #01A7C2;
+    border-bottom: 3px solid #1E4D0F;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 .professorsjobs-container .eachjob h3{
@@ -44,7 +44,7 @@
 .professorsjobs-container button{
     width: 90px;
     margin-right:10px;
-    background-color: #07263B;
+    background-color: #1E4D0F;
     color: #ffffff;
     padding: 5px 0;
     font-size: 14x;

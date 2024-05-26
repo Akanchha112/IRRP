@@ -27,11 +27,12 @@
     /* width: 100%; */
 }
 .istituteprofessors-container .eachprof{
-    padding: 10px;
-    width: 85%;
-    border-bottom: 3px solid #01A7C2;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+	padding: 10px;
+	width: 85%;
+	border-bottom: 3px solid #1E4D0F;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
 .istituteprofessors-container .eachprof h3{
  font-size: 16px;
 }

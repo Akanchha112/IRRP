@@ -22,7 +22,7 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #d8eaff;
-    border: 2px solid #01A7C2;
+    border: 2px solid #1E4D0F;
     /* border-radius: 8px; */
   }
   
@@ -61,11 +61,11 @@
     margin-left: auto; 
     color: white;
     border-radius: 12px;
-    border-color: #01A7C2;
+    border-color: #1E4D0F;
     border-style: none;
     padding:10px 14px;
     font-size: 17px;
     margin-right: 5px;
-    background-color: #01A7C2;
+    background-color: #1E4D0F;
     cursor: pointer;
 }

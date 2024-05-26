@@ -8,6 +8,15 @@
     
 }
 
+.addText {
+    color: #646464; /* Grey color for "Add" */
+    }
+    
+    
+    .researchText {
+    color: #1E4D0F; /* Green color for "Research" */
+    }
+    
 .subcontainerJob {
 
     /* max-width: 500px; */
@@ -28,6 +37,7 @@
     margin: 0;
     line-height: 42px;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .addJobContainer  form {
@@ -80,6 +90,7 @@
     margin: 0 30px 0 0;
 }
 
+
 #addauthor{
     background-color: #78ee54;
     font-size: 15px;
@@ -108,7 +119,7 @@
 
 #submit:hover {
     background-color:#1E4D0F;
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .subcontainerJob .errorLabel {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from '../../common/img/logo.png'
+import logo from '../../images/logo.png';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from "firebase/auth";
 import { auth } from '../../../services/firebase';

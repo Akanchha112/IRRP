@@ -9,6 +9,7 @@ import BeatLoader from "react-spinners/BeatLoader";
 
 const AddFaculty = () => {
     const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
@@ -54,17 +55,24 @@ const AddFaculty = () => {
     return (
         <div className="addProfContainer">
             {loading ?
-                <BeatLoader
-                    color="#00a2bb"
-                    loading={loading}
-                    size={20}
-                    aria-label="Loading Spinner"
-                    data-testid="loader"
-                />
-                :
-                <div className="subcontainerAdd">
-                    <h1>Add Faculty</h1>
+	<BeatLoader
+	color="#1E4D0F "
+	loading={loading}
+	size={20}
+	aria-label="Loading Spinner"
+	data-testid="loader"
+	/>
+	:
+	<div className="subcontainerAdd">
+	<h1>
+	<span className="addText">Add</span> <span className="facultyText">Faculty</span>
+	</h1>
+
                     <form onSubmit={handleAdd}>
+                        <div>
+                            <label>Name:</label>
+                            <input type="name" value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter your Name' required/>
+                        </div>
                         <div>
                             <label>Email:</label>
                             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter your email' />

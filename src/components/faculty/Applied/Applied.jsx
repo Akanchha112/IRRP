@@ -3,22 +3,22 @@ import './index.css';
 import { doc, collection, query, where, getDocs, getDoc,updateDoc } from "firebase/firestore";
 import { firestore } from '../../../services/firebase';
 import BeatLoader from "react-spinners/BeatLoader";
-import StuNav from '../../student/studentNav/StuNav';
+import ProfNav from '../profNav/ProfNav';
 const Applied=()=>{
     const [applied, setapplied] = useState([]);
     const [loading, setloading] = useState(true);
-    const uid=localStorage.getItem('uid');
-    console.log(uid);
+    const facultyid=localStorage.getItem('uid');
+    console.log(facultyid);
 
     useEffect(() => {
         //fetch candidate data
-        const getjobdata = async (jobid) => {
-            setloading(true);
-            const jobDoc = doc(firestore, "jobs", jobid);
-            const jobSnapshot = await getDoc(jobDoc);
-            const jobData = jobSnapshot.data();
-            return jobData;
-        }
+        // const getjobdata = async (jobid) => {
+        //     setloading(true);
+        //     const jobDoc = doc(firestore, "jobs", jobid);
+        //     const jobSnapshot = await getDoc(jobDoc);
+        //     const jobData = jobSnapshot.data();
+        //     return jobData;
+        // }
         //fetch all pending responses
         const fetchResponse = async () => {
             try {
@@ -26,11 +26,11 @@ const Applied=()=>{
                 const fetchResponse = async () => {
 
                     const ResponseRef = collection(firestore, "research");
-                    const q = query(ResponseRef, where("userId", "==", uid));
+                    const q = query(ResponseRef, where("facultyid", "==", facultyid));
                     const querySnapshot = await getDocs(q);
 
                     const Response = [];
-                    querySnapshot.forEach(async (doc) => {
+                    querySnapshot.forEach((doc) => {
                         // console.log(doc.data())
                         const jobdata = doc.data();
                         console.log(jobdata);
@@ -67,11 +67,11 @@ const Applied=()=>{
 
 
 return<>
-<StuNav/>
+<ProfNav/>
 <div className='Appliedjob'>
             {loading ?
                 <BeatLoader
-                    color="#00a2bb"
+                    color="#1E4D0F"
                     loading={loading}
                     size={20}
                     aria-label="Loading Spinner"
@@ -87,11 +87,11 @@ return<>
 
                             <p key={index} className="eachresponse">
                                 
-                                <p><strong>Position:</strong> {response.postion}</p>
-                                <p><strong>Status:</strong> {response.status}</p>
-                                <p><strong>Duration:</strong> {response.duration}</p>
-                                <p><strong>Stipend:</strong> {response.stipend}</p>
-                                <p><strong>status:</strong> <i> {response.status}</i></p>
+                                <p><strong>Paper Title:</strong> {response.papertitle}</p>
+                                <p><strong>Publisher Name:</strong> {response.publisherName}</p>
+                                <p><strong>Impact Factor:</strong> {response.impactfactor}</p>
+                                <p><strong>Doi:</strong> {response.doi}</p>
+                                <p><strong>Status:</strong> <i> {response.status}</i></p>
                                 
                                 {/* <button onClick={() => { handleAccept(response.responseData.ref.id) }}>Accept</button>
                                 <button onClick={() => { handleReject(response.responseData.ref.id) }}>Reject</button> */}

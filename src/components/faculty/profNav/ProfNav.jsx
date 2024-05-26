@@ -1,12 +1,13 @@
 import React from 'react';
 import  "./index.css";
-import logo from '../../common/img/logo.png'
+// import logo from '../../common/img/logo.png'
 import { signOut } from "firebase/auth";
 import { auth } from '../../../services/firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react';
 // import logo from '../../../common/img/logo.png';
+import logo from '../../images/logo.png';
 import { useNavigate } from 'react-router-dom';
 
 function ProfNav() {
@@ -64,9 +65,10 @@ function ProfNav() {
                     <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
                 </div>
                 <nav id="nav-bar">
+                    <a href="#" className="nav-link" onClick={() => { appliedhandle() }}>Applied</a>
                     <a href="#about" className="nav-link" onClick={() => { profilehandle() }} >Profile</a>
                     <a href="#" className="nav-link" onClick={() => { logouthandle() }}>Logout</a>
-                    <a href="#" className="nav-link" onClick={() => { appliedhandle() }}>Applied</a>
+                    
                     {/* <a href="#contact" className="nav-link" onClick={()=>{homehandle()}}>Contact Us</a>
                     <a href="#" className="nav-link" onClick={()=>{loginhandle()}} >Login</a>
                     <a href="#" className="nav-link" onClick={()=>{signuphandle()}} >SignUp</a> */}

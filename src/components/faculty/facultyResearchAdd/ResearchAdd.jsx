@@ -14,10 +14,10 @@ const ResearchAdd = () => {
     const [volume, setVolume] = useState('');
     const [issue, setIssue] = useState('');
     const [pageno, setPageno] = useState(false);
-    const [date,setDate] = useState('');
-    const [doi,setDoi] = useState('');
-    const [indexing,setIndexing] = useState('');
-    const [impactfactor, setImpactfactor ] = useState('');
+    const [date, setDate] = useState('');
+    const [doi, setDoi] = useState('');
+    const [indexing, setIndexing] = useState('');
+    const [impactfactor, setImpactfactor] = useState('');
     const [totalauthors, setTotalAuthors] = useState(false);
     const [igdtuwAuthors,setIgdtuwAuthors] = useState(false);
     const [igdtuwAuthorName,setIgdtuwAuthorName] = useState('');
@@ -36,8 +36,9 @@ const ResearchAdd = () => {
     const handleAdd = async (e) => {
         e.preventDefault();
         setloading(true);
-        const profid = localStorage.getItem('uid');
-        const job = {
+        const facultyid = localStorage.getItem('uid');
+        const research = {
+            facultyid:facultyid,
             papertitle: papertitle,
             journalname: journalname,
             publisherName: publisherName,
@@ -53,8 +54,8 @@ const ResearchAdd = () => {
             igdtuwAuthorName: igdtuwAuthorName
         }
         try {
-            const newJobRef = doc(collection(firestore, "research"));
-            await setDoc(newJobRef, job);
+            const newresearchRef = doc(collection(firestore, "research"));
+            await setDoc(newresearchRef, research);
 
             toast.success("Added Successfully", { position: "top-center" });
             setPapertitle('');
@@ -69,14 +70,14 @@ const ResearchAdd = () => {
             setImpactfactor('');
             setTotalAuthors('');
             setIgdtuwAuthors('');
-            setIgdtuwAuthorName('');    
+            setIgdtuwAuthorName('');
             setIsChecked(false);
             setloading(false);
 
         } catch (error) {
             console.error(error);
             toast.error(error.message, { position: "bottom-center" });
-        }       
+        }
         setloading(false);
         
     }
@@ -84,7 +85,7 @@ const ResearchAdd = () => {
         <div className="addJobContainer">
             {loading ?
                 <BeatLoader
-                    color="#00a2bb"
+                    color="#1E4D0F"
                     loading={loading}
                     size={20}
                     aria-label="Loading Spinner"
@@ -92,20 +93,23 @@ const ResearchAdd = () => {
                 />
                 :
                 <div className="subcontainerJob">
-                    <h1>Add Research</h1>
+                    <h1>
+                        <span className="addText">Add</span> <span className="researchText">Research</span>
+                    </h1>
                     <form onSubmit={handleAdd}>
                         <div>
                             <div>
+
                                 <label>Paper Title</label>
                                 <input type="text" value={papertitle} onChange={(e) => setPapertitle(e.target.value)} placeholder='Enter Paper Title' required />
                             </div>
                             <div>
                                 <label>Name of the Journal</label>
-                                <input type="text" value={journalname} onChange={(e) =>  setJournalname(e.target.value)} placeholder='Enter Name of the Journal' required />
+                                <input type="text" value={journalname} onChange={(e) => setJournalname(e.target.value)} placeholder='Enter Name of the Journal' required />
                             </div>
                             <div>
                                 <label>Publisher Name</label>
-                                <input type="text" value={publisherName} onChange={(e) =>setPublisherName(e.target.value)} placeholder='Enter Publisher Name' required />
+                                <input type="text" value={publisherName} onChange={(e) => setPublisherName(e.target.value)} placeholder='Enter Publisher Name' required />
                             </div>
                             <div>
                                 <label>Volume</label>
@@ -125,9 +129,11 @@ const ResearchAdd = () => {
                             </div>
                             <div>
                                 <label>DOI</label>
-                                <input type="text" value={doi}  onChange={(e) => setDoi(e.target.value)} placeholder='Enter DOI' required />
+                                <input type="text" value={doi} onChange={(e) => setDoi(e.target.value)} placeholder='Enter DOI' required />
                             </div>
-                
+
+
+
                             <div>
                                 <label>Indexing</label>
                                 <input type="text" value={indexing} onChange={(e) => setIndexing(e.target.value)} placeholder='Enter Indexing' required />
@@ -138,11 +144,11 @@ const ResearchAdd = () => {
                             </div>
                             <div>
                                 <label>Total Number of Authors</label>
-                                <input type="number" value={totalauthors}  onChange={(e) => setTotalAuthors(e.target.value)} placeholder='Total Number of Authors' required />
+                                <input type="number" value={totalauthors} onChange={(e) => setTotalAuthors(e.target.value)} placeholder='Total Number of Authors' required />
                             </div>
                             <div>
                                 <label>Number of IGDTUW Authors</label>
-                                <input type="number" value={igdtuwAuthors}  onChange={(e) => setIgdtuwAuthors(e.target.value)} placeholder='Number of IGDTUW Authors' required />
+                                <input type="number" value={igdtuwAuthors} onChange={(e) => setIgdtuwAuthors(e.target.value)} placeholder='Number of IGDTUW Authors' required />
                             </div>
                             <div>
       {igdtuwAuthorNames.map((authorName, index) => (
@@ -164,11 +170,12 @@ const ResearchAdd = () => {
                             <label className="checkbox-label ">
                                 <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
                             </div>
+                       
                             <div>
                                 <button id="submit" type="submit">Submit</button>
                             </div>
                         </div>
-                        </div>
+                        
                     </form>
                 </div>
             }

@@ -40,7 +40,7 @@ const SigninPage = () => {
       //to check user role
       const userDoc = doc(firestore, "users", user.uid);
       const userSnapshot = await getDoc(userDoc);
-      // console.log(userSnapshot)
+      console.log(userSnapshot)
 
       if (userSnapshot.exists()) {
         const userData = userSnapshot.data();
@@ -82,7 +82,7 @@ const SigninPage = () => {
     <div className="signin-container">
       {loading ?
         <BeatLoader
-          color="#00a2bb"
+          color="#1E4D0F"
           loading={loading}
           size={20}
           aria-label="Loading Spinner"

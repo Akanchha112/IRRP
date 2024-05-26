@@ -7,19 +7,23 @@
     margin-top: 30px;
     
 }
+.addText {
+    color: #646464; /* Grey color for "Add" */
+    }
+    
+    
+    .facultyText {
+    color: #1E4D0F; /* Green color for "Research" */
+    }
+    
 
 .subcontainerAdd {
 
-    /* max-width: 500px; */
-    width: 50%;
-    height: 100%;
-    background-color: white;
-    box-shadow: 0 20px 40px -20px rgba(14, 0, 47, 0.11);
-    /* padding: 50px 35px; */
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    flex-direction: column;
+    margin: 0;
+line-height: 42px;
+text-align: center;
+margin-bottom: 20px;
+
 }
 
 .subcontainerAdd h1 {
@@ -28,46 +32,42 @@
     margin: 0;
     line-height: 42px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .subcontainerAdd label {
-    /* color: #ffffff; */
-    display: block;
     margin-top: 5px;
     font-size: 14px;
     font-weight: 500;
+    margin-right: 20px; 
+    /* for space betweent the text and corresponding input field */
+    
 }
 
 .subcontainerAdd input {
-    display: block;
-    height: 30px;
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 2px;
     font-size: 14px;
-    font-weight: 300;
-    margin: 0 30px 0 0;
+font-weight: 300;
+margin: 0 30px 0 0;
+
 }
 
 .subcontainerAdd button {
-    margin: 19px 0 0 8px;
-    width: 80px;
+    margin: -3px 0px 0px 20px;
+width: 90px;
 
-    background-color: #07263B;
-    color: #ffffff;
-    padding: 10px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    /* color: black; */
-}
 
+background-color: #1E4D0F;
+color: #ffffff;
+padding: 6px 0;
+font-size: 18px;
+border-radius: 50px;
+
+    }
+    
 .subcontainerAdd button:hover {
-    background-color: #00a2bb;
-    color: #ffffff;
+    background-color:#45a049 ;
+color: #ffffff;
+
 }
 
 .subcontainerAdd .errorLabel {
@@ -79,6 +79,7 @@
 .addProfContainer  form {
     display: flex;
     /* flex-wrap: wrap; */
+    
     align-items: center;
     justify-content: center;
     padding-bottom: 10px;
