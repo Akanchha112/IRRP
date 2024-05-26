@@ -1,9 +1,10 @@
 import AdminNav from "../../../components/admin/AdminNav/AdminNav";
-import AddProf from "../../../components/admin/addFaculty/AddFaculty";
-import GetProf from "../../../components/admin/getFaculty/GetFaculty";
+
+import DisplayResearches from "../../../components/admin/displayResearches/DisplayResearches";
 const Dashboard=()=>{
     return <>
         <AdminNav/>
+        <DisplayResearches/>
         
     </>
 }
