@@ -175,7 +175,7 @@ const ResearchAdd = () => {
                                 <button id="submit" type="submit">Submit</button>
                             </div>
                         </div>
-                        
+                        </div>
                     </form>
                 </div>
             }
