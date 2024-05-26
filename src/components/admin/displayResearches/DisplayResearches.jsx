@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import "./index.css";
 import { auth, firestore } from '../../../services/firebase';
-import { doc, collection, query, where, getDocs, deleteDoc } from "firebase/firestore";
+import { doc,getDoc, collection, query, where, getDocs, deleteDoc } from "firebase/firestore";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, Link } from 'react-router-dom'
@@ -15,6 +15,13 @@ const DisplayResearches = () => {
     // console.log(profid);
 
     useEffect(() => {
+        const getFacultyname= async (facultyId)=>{
+            setloading(true);
+            const userDoc = doc(firestore, "users", facultyId);
+            const userSnapshot = await getDoc(userDoc);
+            const userData = userSnapshot.data().name;
+            return userData;
+        }
         try {
             const fetchJobs = async () => {
                 const researchRef = collection(firestore, "research");
@@ -23,13 +30,14 @@ const DisplayResearches = () => {
 
                 const researchData = {};
 
-                querySnapshot.forEach((doc) => {
+                querySnapshot.forEach(async (doc) => {
                     const data = doc.data();
                     const facultyId = data.facultyId;
-
+                    const facultyname=await getFacultyname(facultyId);
                     if (!researchData[facultyId]) {
                         researchData[facultyId] = {
                             facultyId: facultyId,
+                            facultyname: facultyname,
                             count: 0,
                             researchItems: []
                         };
@@ -92,7 +100,7 @@ const DisplayResearches = () => {
 
                             <p key={facultyResearch.facultyId} className="eachjob">
 
-                                <h2>Faculty ID: {facultyResearch.facultyId}</h2>
+                                <h2>Faculty Name: {facultyResearch.facultyname}</h2>
                                 <p>Research Count: {facultyResearch.count}</p>
                                 <ul>
                                     {facultyResearch.researchItems.map((item, index) => (
