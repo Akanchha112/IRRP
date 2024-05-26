@@ -1,0 +1,134 @@
+/* .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 40px;
+    background-color: #008000;
+    color: white;
+    flex-wrap: nowrap;
+    align-content: stretch;
+}
+
+.social-icons {
+    display: flex;
+    gap: 26px;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-number, .add {
+    margin-top: 0px;
+    color: white;
+}
+.contact-info img{
+    width: 50px;
+    height: 50px;
+}
+
+
+.credits {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.credits a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+} */
+
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Ensure the footer content is stacked vertically */
+    justify-content: space-between;
+    align-items: stretch;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: -8px;
+
+    background-color: #008000;
+    color: white;
+    flex-wrap: nowrap;
+    align-content: stretch;
+}
+
+.social-icons {
+    display: flex;
+    gap: 26px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.contact-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-number, .add {
+    margin-top: 0px;
+    color: white;
+}
+
+.contact-info img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Styling for the credits section */
+.credits {
+    margin-top: 20px; /* Add margin to separate from above content */
+    text-align: center; /* Center align the credits text */
+}
+
+/* Styling for the links in the credits section */
+.credits a {
+    color: white; /* White color for the links */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 5px; /* Add margin between the names */
+}
+
+/* Add underline on hover for the links in the credits section */
+.credits a:hover {
+    /* text-decoration: underline; */
+    font-size: 20px;
+    /* color: #1E4D0F ;  */
+    font-style: normal;
+}
+p{
+    color: white;
+}
+a{
+    font-style: italic;
+    font-weight: 200;
+}
