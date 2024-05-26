@@ -8,39 +8,66 @@ import BeatLoader from "react-spinners/BeatLoader";
 import './index.css';
 
 const ResearchAdd = () => {
-    const [position, setPosition] = useState('');
-    const [stipend, setStipend] = useState('');
-    const [duration, setDuration] = useState('');
-    const [description, setDescription] = useState('');
-    const [status, setStatus] = useState('pending');
+    const [papertitle, setPapertitle] = useState('');
+    const [journalname, setJournalname] = useState('');
+    const [publisherName, setPublisherName] = useState('');
+    const [volume, setVolume] = useState('');
+    const [issue, setIssue] = useState('');
+    const [pageno, setPageno] = useState(false);
+    const [date,setDate] = useState('');
+    const [doi,setDoi] = useState('');
+    const [indexing,setIndexing] = useState('');
+    const [impactfactor, setImpactfactor ] = useState('');
+    const [totalauthors, setTotalAuthors] = useState(false);
+    const [igdtuwAuthors,setIgdtuwAuthors] = useState(false);
+    const [igdtuwAuthorName,setIgdtuwAuthorName] = useState('');
+    const [isChecked, setIsChecked] = useState(false);
     const [loading, setloading] = useState(false);
     const handleAdd = async (e) => {
         e.preventDefault();
         setloading(true);
         const facultyid = localStorage.getItem('uid');
         const research = {
-            postion: position,
-            stipend: stipend,
-            duration: duration,
-            description: description,
-            status: status,
-            facultyid: facultyid
+            facultyid:facultyid,
+            papertitle: papertitle,
+            journalname: journalname,
+            publisherName: publisherName,
+            volume: volume,
+            issue: issue,
+            pageno: pageno,
+            date: date,
+            doi: doi,
+            indexing: indexing,
+            impactfactor: impactfactor,
+            totalauthors: totalauthors,
+            igdtuwAuthors: igdtuwAuthors,
+            igdtuwAuthorName: igdtuwAuthorName
         }
         try {
             const newresearchRef = doc(collection(firestore, "research"));
             await setDoc(newresearchRef, research);
 
             toast.success("Added Successfully", { position: "top-center" });
-            setPosition('');
-            setDescription('');
-            setDuration('');
-            setStipend('');
+            setPapertitle('');
+            setJournalname('');
+            setPublisherName('');
+            setVolume('');
+            setIssue('');
+            setPageno('');
+            setDate('');
+            setDoi('');
+            setIndexing('');
+            setImpactfactor('');
+            setTotalAuthors('');
+            setIgdtuwAuthors('');
+            setIgdtuwAuthorName('');    
+            setIsChecked(false);
             setloading(false);
 
         } catch (error) {
             console.error(error);
             toast.error(error.message, { position: "bottom-center" });
-        }
+        }       
         setloading(false);
     }
     return <>
@@ -59,35 +86,69 @@ const ResearchAdd = () => {
                     <form onSubmit={handleAdd}>
                         <div>
                             <div>
-                                <label>Position</label>
-                                <input type="text" value={position} onChange={(e) => setPosition(e.target.value)} placeholder='Enter Position' required />
+                                <label>Paper Title</label>
+                                <input type="text" value={papertitle} onChange={(e) => setPapertitle(e.target.value)} placeholder='Enter Paper Title' required />
                             </div>
                             <div>
-                                <label>Stipend</label>
-                                <input type="text" value={stipend} onChange={(e) => setStipend(e.target.value)} placeholder='Enter Stipend' required />
+                                <label>Name of the Journal</label>
+                                <input type="text" value={journalname} onChange={(e) =>  setJournalname(e.target.value)} placeholder='Enter Name of the Journal' required />
                             </div>
                             <div>
-                                <label>Duration</label>
-                                <input type="text" value={duration} onChange={(e) => setDuration(e.target.value)} placeholder='Enter Duration' required />
+                                <label>Publisher Name</label>
+                                <input type="text" value={publisherName} onChange={(e) =>setPublisherName(e.target.value)} placeholder='Enter Publisher Name' required />
                             </div>
-
-                        </div>
-                        <div>
+                            <div>
+                                <label>Volume</label>
+                                <input type="text" value={volume} onChange={(e) => setVolume(e.target.value)} placeholder='Enter Volume' required />
+                            </div>
+                            <div>
+                                <label>Issue </label>
+                                <input type="text" value={issue} onChange={(e) => setIssue(e.target.value)} placeholder='Enter Issue ' required />
+                            </div>
+                            <div>
+                                <label>Page Number</label>
+                                <input type="number" value={pageno} onChange={(e) => setPageno(e.target.value)} placeholder='Enter Page Number' required />
+                            </div>
+                            <div>
+                                <label>Published Date</label>
+                                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} placeholder='Published Date' required />
+                            </div>
+                            <div>
+                                <label>DOI</label>
+                                <input type="text" value={doi}  onChange={(e) => setDoi(e.target.value)} placeholder='Enter DOI' required />
+                            </div>
+                
                             
+                
                             <div>
-                                <label>Description</label>
-                                <textarea
-                                    type="textarea"
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    placeholder="Enter Description"
-                                    required
-                                    rows="4"
-                                />
+                                <label>Indexing</label>
+                                <input type="text" value={indexing} onChange={(e) => setIndexing(e.target.value)} placeholder='Enter Indexing' required />
                             </div>
-
-                            <button type="submit">Add</button>
+                            <div>
+                                <label>Impact Factor</label>
+                                <input type="text" value={impactfactor} onChange={(e) => setImpactfactor(e.target.value)} placeholder='Impact Factor' required />
+                            </div>
+                            <div>
+                                <label>Total Number of Authors</label>
+                                <input type="number" value={totalauthors}  onChange={(e) => setTotalAuthors(e.target.value)} placeholder='Total Number of Authors' required />
+                            </div>
+                            <div>
+                                <label>Number of IGDTUW Authors</label>
+                                <input type="number" value={igdtuwAuthors}  onChange={(e) => setIgdtuwAuthors(e.target.value)} placeholder='Number of IGDTUW Authors' required />
+                            </div>
+                            <div>
+                                <label>Name of IGDTUW Authors</label>
+                                <input type="text" value={igdtuwAuthorName}  onChange={(e) => setIgdtuwAuthorName(e.target.value)} placeholder='Name of IGDTUW Authors' required />
+                            </div>
+                            <div>
+                            <label>
+                                <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
+                            </div>
+                            <div>
+                                <button type="submit">Add</button>
+                            </div>
                         </div>
+                        
                     </form>
                 </div>
             }
