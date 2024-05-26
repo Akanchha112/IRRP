@@ -21,7 +21,7 @@ function Body() {
             {/* Green line */}
             <div className="green-line"></div>
             {/* Body content */}
-            <h1 className="heading">AWARDEES</h1>
+            <h1 className="heading" id='awardees'>AWARDEES</h1>
             <h2>Faculty</h2>
 
             <div className="awardee">
