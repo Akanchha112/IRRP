@@ -3,7 +3,7 @@ import './index.css';
 import { doc, collection, query, where, getDocs, getDoc,updateDoc } from "firebase/firestore";
 import { firestore } from '../../../services/firebase';
 import BeatLoader from "react-spinners/BeatLoader";
-import StuNav from '../../student/studentNav/StuNav';
+import ProfNav from '../profNav/ProfNav';
 const Applied=()=>{
     const [applied, setapplied] = useState([]);
     const [loading, setloading] = useState(true);
@@ -67,7 +67,7 @@ const Applied=()=>{
 
 
 return<>
-<StuNav/>
+<ProfNav/>
 <div className='Appliedjob'>
             {loading ?
                 <BeatLoader
