@@ -65,9 +65,10 @@ function ProfNav() {
                     <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
                 </div>
                 <nav id="nav-bar">
+                    <a href="#" className="nav-link" onClick={() => { appliedhandle() }}>Applied</a>
                     <a href="#about" className="nav-link" onClick={() => { profilehandle() }} >Profile</a>
                     <a href="#" className="nav-link" onClick={() => { logouthandle() }}>Logout</a>
-                    <a href="#" className="nav-link" onClick={() => { appliedhandle() }}>Applied</a>
+                    
                     {/* <a href="#contact" className="nav-link" onClick={()=>{homehandle()}}>Contact Us</a>
                     <a href="#" className="nav-link" onClick={()=>{loginhandle()}} >Login</a>
                     <a href="#" className="nav-link" onClick={()=>{signuphandle()}} >SignUp</a> */}

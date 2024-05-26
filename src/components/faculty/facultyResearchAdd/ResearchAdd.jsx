@@ -19,16 +19,26 @@ const ResearchAdd = () => {
     const [indexing, setIndexing] = useState('');
     const [impactfactor, setImpactfactor] = useState('');
     const [totalauthors, setTotalAuthors] = useState(false);
-    const [igdtuwAuthors, setIgdtuwAuthors] = useState(false);
-    const [igdtuwAuthorName, setIgdtuwAuthorName] = useState('');
+    const [igdtuwAuthors,setIgdtuwAuthors] = useState(false);
+    const [igdtuwAuthorName,setIgdtuwAuthorName] = useState('');
+    const [igdtuwAuthorNames, setIgdtuwAuthorNames] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
     const [loading, setloading] = useState(false);
+    const handleAddAuthor = () => {
+        setIgdtuwAuthorNames([...igdtuwAuthorNames, '']);
+      };
+    
+      const handleAuthorNameChange = (index, value) => {
+        const updatedAuthors = [...igdtuwAuthorNames];
+        updatedAuthors[index] = value;
+        setIgdtuwAuthorNames(updatedAuthors);
+      };
     const handleAdd = async (e) => {
         e.preventDefault();
         setloading(true);
         const facultyid = localStorage.getItem('uid');
         const research = {
-            facultyid: facultyid,
+            facultyid:facultyid,
             papertitle: papertitle,
             journalname: journalname,
             publisherName: publisherName,
@@ -69,6 +79,7 @@ const ResearchAdd = () => {
             toast.error(error.message, { position: "bottom-center" });
         }
         setloading(false);
+        
     }
     return <>
         <div className="addJobContainer">
@@ -141,17 +152,17 @@ const ResearchAdd = () => {
                             </div>
                             <div>
                                 <label>Name of IGDTUW Authors</label>
-                                <input type="text" value={igdtuwAuthorName} onChange={(e) => setIgdtuwAuthorName(e.target.value)} placeholder='Name of IGDTUW Authors' required />
+                                <input type="text" value={igdtuwAuthorName}  onChange={(e) => setIgdtuwAuthorName(e.target.value)} placeholder='Name of IGDTUW Authors' required />
                             </div>
                             <div>
                                 <label>
                                     <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
                             </div>
                             <div>
-                                <button type="submit">Add</button>
+                                <button type="submit">Submit</button>
                             </div>
                         </div>
-
+                        
                     </form>
                 </div>
             }
