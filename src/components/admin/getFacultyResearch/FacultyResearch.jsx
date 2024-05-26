@@ -35,9 +35,9 @@ const FacultyResearch = () => {
 
                     const Response = [];
                     querySnapshot.forEach(async (doc) => {
-                        console.log(doc.data())
+                        console.log(doc.ref.id)
                         // const userid = doc.data().userId;
-                        Response.push(doc.data());
+                        Response.push(doc);
                         // const userData = await getUserdata(userid);
                         // const combinedData = { userData, responseData: doc };
                         // console.log(combinedData);
@@ -74,12 +74,12 @@ const FacultyResearch = () => {
 
 
     //accept
-    const handleAccept = async (responseid) => {
+    const handleAccept = async (researchid) => {
         try {
-            await updateDoc(doc(firestore, "response", responseid), {              // to save user credentials in database
+            await updateDoc(doc(firestore, "research", researchid), {              // to save user credentials in database
                 status: "accepted"
             });
-            toast.success("Accepted Application", { position: "top-center" });
+            toast.success("Accepted Research", { position: "top-center" });
         } catch (error) {
             console.error(error);
             toast.success(error.msg, { position: "bottom-corner" });
@@ -87,12 +87,12 @@ const FacultyResearch = () => {
 
     }
     //reject
-    const handleReject = async (responseid) => {
+    const handleReject = async (researchid) => {
         try {
-            await updateDoc(doc(firestore, "response", responseid), {              // to save user credentials in database
+            await updateDoc(doc(firestore, "research", researchid), {              // to save user credentials in database
                 status: "rejected"
             });
-            toast.success("Rejected Application", { position: "top-center" });
+            toast.success("Rejected Research", { position: "top-center" });
         } catch (error) {
             console.error(error);
             toast.success(error.msg, { position: "bottom-corner" });
@@ -121,23 +121,23 @@ const FacultyResearch = () => {
                         {!loading && researches.length !== 0 ? researches.map((response, index) => (
 
                             <p key={index} className="eachresponse">
-                                <h3>Reponse {index + 1}</h3>
-                                <p><strong>Paper Title:</strong> {response.papertitle}</p>
-                                <p><strong>DOI:</strong> <a href={response.doi} target="_blank" rel="noopener noreferrer">{response.doi}</a></p>
-                                <p><strong>IGDTUW Author Name:</strong> {response.igdtuwAuthorName}</p>
-                                <p><strong>IGDTUW Authors:</strong> {response.igdtuwAuthors}</p>
-                                <p><strong>Impact Factor:</strong> {response.impactfactor}</p>
-                                <p><strong>Indexing:</strong> {response.indexing}</p>
-                                <p><strong>Issue:</strong> {response.issue}</p>
-                                <p><strong>Journal Name:</strong> {response.journalname}</p>
-                                <p><strong>Page No:</strong> {response.pageno}</p>
+                                <h3>Research {index + 1}</h3>
+                                <p><strong>Paper Title:</strong> {response.data().papertitle}</p>
+                                <p><strong>DOI:</strong> <a href={response.data().doi} target="_blank" rel="noopener noreferrer">{response.data().doi}</a></p>
+                                <p><strong>IGDTUW Author Name:</strong> {response.data().igdtuwAuthorName}</p>
+                                <p><strong>IGDTUW Authors:</strong> {response.data().igdtuwAuthors}</p>
+                                <p><strong>Impact Factor:</strong> {response.data().impactfactor}</p>
+                                <p><strong>Indexing:</strong> {response.data().indexing}</p>
+                                <p><strong>Issue:</strong> {response.data().issue}</p>
+                                <p><strong>Journal Name:</strong> {response.data().journalname}</p>
+                                <p><strong>Page No:</strong> {response.data().pageno}</p>
                                 
-                                <p><strong>Publisher Name:</strong> {response.publisherName}</p>
-                                <p><strong>Status:</strong> {response.status}</p>
-                                <p><strong>Total Authors:</strong> {response.totalauthors}</p>
-                                <p><strong>Volume:</strong> {response.volume}</p>
-                                <button onClick={() => { handleAccept(response.responseData.ref.id) }}>Accept</button>
-                                <button onClick={() => { handleReject(response.responseData.ref.id) }}>Reject</button>
+                                <p><strong>Publisher Name:</strong> {response.data().publisherName}</p>
+                                <p><strong>Status:</strong> {response.data().status}</p>
+                                <p><strong>Total Authors:</strong> {response.data().totalauthors}</p>
+                                <p><strong>Volume:</strong> {response.data().volume}</p>
+                                <button onClick={() => { handleAccept(response.ref.id) }}>Accept</button>
+                                <button onClick={() => { handleReject(response.ref.id) }}>Reject</button>
                             </p>
                         )) : <h3>No Response received yet</h3>}
 

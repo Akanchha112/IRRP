@@ -90,7 +90,7 @@ const DisplayResearches = () => {
                             {research.length ? research.map((facultyResearch) => (
                                 <li key={facultyResearch.facultyId} className="eachjob">
                                     <h2>Faculty Name: {facultyResearch.facultyName}</h2>
-                                    <h3>Research Count: {facultyResearch.count}</h3>
+                                    <h3>Total Researches: {facultyResearch.count}</h3>
                                     
                                     <button onClick={() => handleResponse(facultyResearch.facultyId)}>See All</button>
                                 </li>

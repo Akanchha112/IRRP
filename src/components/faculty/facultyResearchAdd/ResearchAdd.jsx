@@ -19,26 +19,27 @@ const ResearchAdd = () => {
     const [indexing, setIndexing] = useState('');
     const [impactfactor, setImpactfactor] = useState('');
     const [totalauthors, setTotalAuthors] = useState(false);
-    const [igdtuwAuthors,setIgdtuwAuthors] = useState(false);
-    const [igdtuwAuthorName,setIgdtuwAuthorName] = useState('');
+    const [igdtuwAuthors, setIgdtuwAuthors] = useState(false);
+    const [igdtuwAuthorName, setIgdtuwAuthorName] = useState('');
     const [igdtuwAuthorNames, setIgdtuwAuthorNames] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
     const [loading, setloading] = useState(false);
     const handleAddAuthor = () => {
         setIgdtuwAuthorNames([...igdtuwAuthorNames, '']);
-      };
-    
-      const handleAuthorNameChange = (index, value) => {
+    };
+
+    const handleAuthorNameChange = (index, value) => {
         const updatedAuthors = [...igdtuwAuthorNames];
         updatedAuthors[index] = value;
         setIgdtuwAuthorNames(updatedAuthors);
-      };
+    };
     const handleAdd = async (e) => {
         e.preventDefault();
         setloading(true);
         const facultyid = localStorage.getItem('uid');
         const research = {
-            facultyid:facultyid,
+            status:"pending",
+            facultyid: facultyid,
             papertitle: papertitle,
             journalname: journalname,
             publisherName: publisherName,
@@ -79,7 +80,7 @@ const ResearchAdd = () => {
             toast.error(error.message, { position: "bottom-center" });
         }
         setloading(false);
-        
+
     }
     return <>
         <div className="addJobContainer">
@@ -151,31 +152,31 @@ const ResearchAdd = () => {
                                 <input type="number" value={igdtuwAuthors} onChange={(e) => setIgdtuwAuthors(e.target.value)} placeholder='Number of IGDTUW Authors' required />
                             </div>
                             <div>
-      {igdtuwAuthorNames.map((authorName, index) => (
-        <div key={index}>
-          <label>{`Name of IGDTUW Author ${index + 1}`}</label>
-          <input
-            type="text"
-            value={authorName}
-            onChange={(e) => handleAuthorNameChange(index, e.target.value)}
-            placeholder={`Name of IGDTUW Author ${index + 1}`}
-            required
-          />
-        </div>
-      ))}
-                            <div>
-                                <button type="" id="addauthor" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
+                                {igdtuwAuthorNames.map((authorName, index) => (
+                                    <div key={index}>
+                                        <label>{`Name of IGDTUW Author ${index + 1}`}</label>
+                                        <input
+                                            type="text"
+                                            value={authorName}
+                                            onChange={(e) => handleAuthorNameChange(index, e.target.value)}
+                                            placeholder={`Name of IGDTUW Author ${index + 1}`}
+                                            required
+                                        />
+                                    </div>
+                                ))}
+                                <div>
+                                    <button type="" id="addauthor" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
+                                </div>
+                                <div className='check'>
+                                    <label className="checkbox-label ">
+                                        <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
+                                </div>
+
+                                <div>
+                                    <button id="submit" type="submit">Submit</button>
+                                </div>
                             </div>
-                            <div className='check'>
-                            <label className="checkbox-label ">
-                                <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
-                            </div>
-                       
-                            <div>
-                                <button id="submit" type="submit">Submit</button>
-                            </div>
-                        </div>
-                        
+                    </div>
                     </form>
                 </div>
             }
