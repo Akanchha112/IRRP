@@ -32,7 +32,7 @@ function AdminNav(){
     }
     return(
         <div id="navbar">
-            <div className="Navbar-content-div" style={{"marginRight":"80px","marginLeft":"80px"}}>
+            <div className="Navbar_container" >
                 <a href="#home-sec" onClick={()=>{homehandle()}}>
                     <img
                         src={logo}
