@@ -36,27 +36,35 @@
     align-items: center;
     justify-content: space-around;
     padding-bottom: 10px;
+    background-color: #e7e6e6;
+    border-color: #1E4D0F;
+    border-radius: 9px;
+    padding: 15px 15px;
   }
 
 .subcontainerJob label {
     /* color: #ffffff; */
     display: block;
     margin-top: 8px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
+    margin-bottom: 5px;
+    /* font-weight: bold; */
 }
 
 .subcontainerJob input {
     display: block;
     height: 30px;
     width: 80%;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color: white;
     border-radius: 3px;
     padding: 0 10px;
     margin-top: 2px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     margin: 0 30px 0 0;
+    border:2px white;
+    width: 120%;
 }
 
 .subcontainerJob textarea{
@@ -72,22 +80,34 @@
     margin: 0 30px 0 0;
 }
 
-.subcontainerJob button {
-    margin: 9px 0 0 0px;
-    width: 80px;
-
-    background-color: #07263B;
-    color: #ffffff;
-    padding: 10px 0;
-    font-size: 18px;
+#addauthor{
+    background-color: #78ee54;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 20px;
+    padding:12px 12px;
+    width:950;
+}
+#addauthor:hover{
+    background-color: #269D00;
+}
+#submit{
+    background-color: #269D00;
+    font-size: 16px;
     font-weight: 600;
+    width:80%;
+    padding:12px 12px;
+}
+#submit, #addauthor{
+    margin: 15px 0 10px 40px;
+    color: #ffffff;
     border-radius: 5px;
     cursor: pointer;
-    /* color: black; */
+    border:none;
 }
 
-.subcontainerJob button:hover {
-    background-color: #00a2bb;
+#submit:hover {
+    background-color:#1E4D0F;
     color: #ffffff;
 }
 
@@ -96,7 +116,16 @@
     color: red;
     font-size: 10px;
 }
+.check {
+    display: flex;
+    align-items: center; 
+}
 
+.checkbox-label {
+    display: flex;
+    align-items: center;
+}
 
-  
-  
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px; 
+}

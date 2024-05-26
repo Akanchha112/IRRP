@@ -158,14 +158,14 @@ const ResearchAdd = () => {
         </div>
       ))}
                             <div>
-                                <button type="" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
+                                <button type="" id="addauthor" onClick={handleAddAuthor}>Add IGDTUW Co-Author</button>
                             </div>
-                            <div>
-                            <label>
+                            <div className='check'>
+                            <label className="checkbox-label ">
                                 <input type="checkbox" value={isChecked} onChange={() => setIsChecked(!isChecked)} required /> I have rechecked all the details</label>
                             </div>
                             <div>
-                                <button type="submit">Submit</button>
+                                <button id="submit" type="submit">Submit</button>
                             </div>
                         </div>
                         </div>
