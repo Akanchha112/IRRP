@@ -71,7 +71,7 @@ return<>
 <div className='Appliedjob'>
             {loading ?
                 <BeatLoader
-                    color="#00a2bb"
+                    color="#1E4D0F"
                     loading={loading}
                     size={20}
                     aria-label="Loading Spinner"

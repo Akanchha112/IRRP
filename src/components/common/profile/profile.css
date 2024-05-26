@@ -2,10 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:800");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-:root {
+/* :root {
   --blue: #303090;
   --light-blue:#5b5bb5;
-}
+} */
 .profilecontaitner{
     /* height: 80vh; */
     /* min-height: max-content; */
@@ -77,38 +77,46 @@
   color: rgb(112, 112, 112);
   text-align: left;
 }
-.otherInfo h3 span{
+/* .otherInfo h3 span{
   color: var(--blue);
-}
+} */
 .social-profile a{
-    color: #07263B;
-    padding: 7px 6px 2px 6px;
-    border: 1px solid #07263B;
-    border-radius: 2px;
-    margin: 0 3px;
-    cursor: pointer;
-    size: 10px;
+  color: #45a049;
+  padding: 3px 6px 2px 6px;
+  /* border: 1px solid #ffffff; */
+  border-radius: 15px;
+  margin: 0px 10px;
+  cursor: pointer;
+  size: 10px;
+  
 }
 .social-profile a:hover{
-    background-color: #07263B;
-    color: white;
+  background-color: #1E4D0F;
+  color: white;
+  
 }
-.social-profile a i {
-    font-size: 14px;
-}
+
 
 .profilecontaitner button{
   margin: 19px 0 0 0px;
   width: 80px;
 
-  background-color: #07263B;
+  background-color: #45a049;;
   color: #ffffff;
   padding: 5px 0;
   font-size: 18px;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
+ 
 }
+.profilecontaitner button:hover {
+  background-color: #1E4D0F;
+  color: #ffffff;
+  
+  
+  }
+  
 .profile{
 background-color: #d8eaff;}
 .areaOfWork,  .Qualification{

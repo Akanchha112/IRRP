@@ -52,7 +52,10 @@ const ProfileEdit = () => {
         {role === 'institute' ? <InstituteNav /> : (role === 'professor' ? <ProfNav /> : <StuNav />)}
         <div className="ProfileEditContainer">
             <div className="subcontainerProfileEdit">
-                <h1>Edit Profile</h1>
+            <h1>
+			<span className="editText">Edit</span> <span className="profileText">Profile</span>
+			</h1>
+
                 <form onSubmit={handleAdd}>
                     <div>
                         
