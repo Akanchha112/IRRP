@@ -17,10 +17,10 @@ const ResearchAdd = () => {
     const [date,setDate] = useState('');
     const [doi,setDoi] = useState('');
     const [indexing,setIndexing] = useState('');
-    const [impactfactor, ] = useState('');
-    const [totalauthors,] = useState('');
-    const [igdtuwAuthors,] = useState('');
-    const [igdtuwAuthorName,] = useState('');
+    const [impactfactor, setImpactfactor ] = useState('');
+    const [totalauthors, setTotalAuthors] = useState(false);
+    const [igdtuwAuthors,setIgdtuwAuthors] = useState(false);
+    const [igdtuwAuthorName,setIgdtuwAuthorName] = useState('');
     const [isChecked, setIsChecked] = useState(false);
     const [loading, setloading] = useState(false);
     const handleAdd = async (e) => {
