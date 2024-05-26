@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../common/Navbar/Navbar.css';
+import  "./index.css";
 import logo from '../../common/img/logo.png'
 import { signOut } from "firebase/auth";
 import { auth } from '../../../services/firebase';

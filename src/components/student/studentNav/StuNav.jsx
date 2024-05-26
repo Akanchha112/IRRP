@@ -6,7 +6,7 @@ import { signOut } from "firebase/auth";
 import { auth } from '../../../services/firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '../../common/Navbar/Navbar.css';
+
 
 function StuNav(){
     const navigate=useNavigate();
