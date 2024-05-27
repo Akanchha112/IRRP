@@ -90,7 +90,7 @@ return<>
                                 <p><strong>Paper Title:</strong> {response.papertitle}</p>
                                 <p><strong>Publisher Name:</strong> {response.publisherName}</p>
                                 <p><strong>Impact Factor:</strong> {response.impactfactor}</p>
-                                <p><strong>Doi:</strong> {response.doi}</p>
+                                <p><strong>Doi:</strong> <a href={response.doi} target="_blank" rel="noopener noreferrer">{response.doi}</a></p>
                                 <p><strong>Status:</strong> <i> {response.status}</i></p>
                                 
                                 {/* <button onClick={() => { handleAccept(response.responseData.ref.id) }}>Accept</button>
