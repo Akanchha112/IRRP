@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc ,getDoc} from "firebase/firestore";
 import { firestore } from '../../../services/firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,6 +37,9 @@ const ResearchAdd = () => {
         e.preventDefault();
         setloading(true);
         const facultyid = localStorage.getItem('uid');
+        const userDoc = doc(firestore, "users", facultyid);
+        const userSnapshot = await getDoc(userDoc);
+        setIgdtuwAuthorName(userSnapshot.data().name);
         const research = {
             status:"pending",
             facultyid: facultyid,
