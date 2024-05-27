@@ -37,6 +37,7 @@ const AddFaculty = () => {
             if (user) {
                 await setDoc(doc(firestore, "users", user.uid), {
                     email: user.email,
+		    name:name,
                     role: 'faculty'
                 });
             }
