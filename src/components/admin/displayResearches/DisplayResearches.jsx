@@ -85,7 +85,9 @@ const DisplayResearches = () => {
                     />
                 ) : (
                     <div className="professorsjobs-container">
-                        <h2>Jobs</h2>
+                        <h1>
+                        <span className="addText">All</span> <span className="researchText">Research Papers</span>
+                    </h1>
                         <ul className='subcontainer'>
                             {research.length ? research.map((facultyResearch) => (
                                 <li key={facultyResearch.facultyId} className="eachjob">

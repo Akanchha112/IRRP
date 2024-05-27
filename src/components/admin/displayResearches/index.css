@@ -1,3 +1,12 @@
+.addText {
+    color: #646464; /* Grey color for "Add" */
+    }
+    
+    
+    .researchText {
+    color: #1E4D0F; /* Green color for "Research" */
+    }
+    
 .professorsjobs{
     width: 100%;
     display: flex;
@@ -10,7 +19,7 @@
     box-shadow: 0 6px 31px -2px rgba(0, 0, 0, 0.1);
 
 }
-.professorsjobs-container h2{
+.professorsjobs-container h1,h2{
     font-size: 32px;
     font-weight: 600;
     margin: 10px 0;

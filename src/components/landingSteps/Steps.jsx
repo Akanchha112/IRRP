@@ -7,7 +7,7 @@ import ARROW from '../images/arrow.jpg';
 function Steps() {
     return (
         <div className="steps-container">
-            <h1>Register for ReWard in just <span className="green-text">4 Steps</span>:</h1>
+            <h1>Register for Reward in just <span className="green-text">4 Steps</span>:</h1>
             <div className="step">
                 <div className="step-number">1</div>
                 <p>Register</p>
