@@ -49,7 +49,7 @@ function AdminNav(){
                 <nav id="nav-bar">
                     <a href="#about" className="nav-link" onClick={()=>{addhandle()}} >Add Faculty</a>
                     <a href="#about" className="nav-link" onClick={()=>{downloadhandle()}} >Download</a>
-                    <a href="#about" className="nav-link" onClick={()=>{profilehandle()}} >Profile</a>
+                    {/* <a href="#about" className="nav-link" onClick={()=>{profilehandle()}} >Profile</a> */}
                     <a href="#connect" className="nav-link" onClick={() => { logouthandle() }}>Logout</a>
                     {/* <a href="#connect" className="nav-link" onClick={()=>{homehandle()}}>Connect</a>
                     <a href="#contact" className="nav-link" onClick={()=>{homehandle()}}>Contact Us</a>
