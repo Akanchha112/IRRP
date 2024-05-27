@@ -39,7 +39,7 @@ const ResearchAdd = () => {
         const facultyid = localStorage.getItem('uid');
         const userDoc = doc(firestore, "users", facultyid);
         const userSnapshot = await getDoc(userDoc);
-        setIgdtuwAuthorName(userSnapshot.data().name);
+        const igdtuwAuthorName = userSnapshot.data().name;
         const research = {
             status:"pending",
             facultyid: facultyid,
@@ -55,7 +55,8 @@ const ResearchAdd = () => {
             impactfactor: impactfactor,
             totalauthors: totalauthors,
             igdtuwAuthors: igdtuwAuthors,
-            igdtuwAuthorName: igdtuwAuthorName
+            igdtuwAuthorName: igdtuwAuthorName,
+            igdtuwAuthorNames: igdtuwAuthorNames,
         }
         try {
             const newresearchRef = doc(collection(firestore, "research"));
