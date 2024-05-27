@@ -115,7 +115,7 @@ const FacultyResearch = () => {
                                 <p><strong>Paper Title:</strong> {response.data().papertitle}</p>
                                 <p><strong>DOI:</strong> <a href={response.data().doi} target="_blank" rel="noopener noreferrer">{response.data().doi}</a></p>
                                 <p><strong>IGDTUW Author Name:</strong> {response.data().igdtuwAuthorName}</p>
-                                <p><strong>IGDTUW Authors:</strong> {response.data().igdtuwAuthorNames.join(', ')}</p>
+                                <p><strong>IGDTUW Authors:</strong> {response.data().igdtuwAuthorNames?.join(', ') || ''}</p>
                                 <p><strong>Impact Factor:</strong> {response.data().impactfactor}</p>
                                 <p><strong>Indexing:</strong> {response.data().indexing}</p>
                                 <p><strong>Issue:</strong> {response.data().issue}</p>
