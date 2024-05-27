@@ -82,7 +82,7 @@ const Download=()=>{
                                             <td>{response.papertitle}</td>
                                             <td><a href={response.doi} target="_blank" rel="noopener noreferrer">{response.doi}</a></td>
                                             <td>{response.igdtuwAuthorName}</td>
-                                            <td>{response.igdtuwAuthors}</td>
+                                            <td>{response.igdtuwAuthorNames?.join(', ') || ''}</td>
                                             <td>{response.impactfactor}</td>
                                             <td>{response.indexing}</td>
                                             <td>{response.issue}</td>
