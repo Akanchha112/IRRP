@@ -32,11 +32,11 @@ The features of IRRP are as follows:
 
 
 ## Credentials 🔑
-- **Admin** 
+- **Admin -** 
  Email: admin@example.com
  Password: admin123
 
-- **Faculty** 
+- **Faculty -** 
   Email: faculty@example.com
   Password: faculty123
 
