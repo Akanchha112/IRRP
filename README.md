@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# IGDTUW Research Reward Portal 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Overview 
 
-In the project directory, you can run:
+IRRP (IGDTUW Research Reward Portal) is a web application designed to streamline the submission and management of research papers for university faculty. It simplifies the administrative process and enhances efficiency. The platform replaces cumbersome Excel sheets and error-prone manual compilation with a simple interface, making reviewing and evaluating research data more accurate and efficient.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Problem Statement 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our university currently faces challenges in efficiently collecting and managing data on research papers. Google Forms restricts submissions to a limited number of research papers and documents to be uploaded, creating difficulties for faculty members with extensive research portfolios. Additionally, compiling and reviewing submissions from cumbersome Excel sheets is time-consuming and prone to errors.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Solution
+IRRP (IGDTUW Research Reward Portal) offers a streamlined web application that allows faculty to submit unlimited research papers effortlessly. The platform simplifies the administrative process, allowing easy access and evaluation of submitted research papers, thereby enhancing efficiency and accuracy in research data management. Further, it also eases the process of faculty research awards based on their research contributions and their impact. 
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features and Functionality
+The features of IRRP are as follows:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Roles 
+### *1. Admin*     
+  - *Signin :* 
+  - *Profile Management :* View and edit profiles
+  - *Approve Research Paper :* Verify, approve or reject research papers based on the information provided
+  - *Download Research Paper :* Download all the details in an Excel sheet for easy verification and access
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### *2. Faculty*
+  - *Signin :* Faculty can signin only using credentials provided by the university  
+  - *Profile Management :* Add and modify academic and contact details 
+  - *Add Research Paper :* Upload research paper details and track status 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Credentials 
+- *Admin*  
+ Email: admin@example.com
+ Password: admin123
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- *Faculty* 
+  Email: faculty@example.com
+  Password: faculty123
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
