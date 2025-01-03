@@ -31,7 +31,7 @@ const SignupPage = () => {
       setPasswordError('Password length must be 6')
       return
     }
-    if (role == "professor") {
+    if (role == "professor") {    //make it faculty
       toast.error("Contact your university to register your mail");
       return
     }
@@ -39,7 +39,7 @@ const SignupPage = () => {
 
       await createUserWithEmailAndPassword(auth, email, password);  //to create user auth
       const user = auth.currentUser;
-      console.log(user.uid, role);
+      // console.log(user.uid, role);
 
       if (user) {
         await setDoc(doc(firestore, "users", user.uid), {              // to save user credentials in database
